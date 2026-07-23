@@ -1,3 +1,5 @@
+from modules.grammar import correct_email
+
 import streamlit as st
 
 st.set_page_config(
@@ -25,7 +27,8 @@ if st.button("Analyze Email"):
         st.header("Email Analysis Results")
 
         st.subheader("Grammar Correction")
-        st.info("Comming soon: The AI will provide grammar corrections for your email.") 
+        corrected_email = correct_email(email)
+        st.code(corrected_email)
 
         st.subheader("Tone Analysis")
         st.info("Comming soon: The AI will analyze the tone of your email and provide feedback.")
