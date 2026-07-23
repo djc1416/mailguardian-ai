@@ -16,4 +16,25 @@ email= st.text_area(
     placeholder="Paste your email here..."  
 )
 
-st.button("Analyze Email")
+if st.button("Analyze Email"):
+    if email.strip() == "":
+        st.warning("Please paste an email to analyze.")
+    else:
+        st.success("Analyzing your email...")
+
+        st.header("Email Analysis Results")
+
+        st.subheader("Grammar Correction")
+        st.info("Comming soon: The AI will provide grammar corrections for your email.") 
+
+        st.subheader("Tone Analysis")
+        st.info("Comming soon: The AI will analyze the tone of your email and provide feedback.")
+
+        st.subheader("Suggested Subject")
+        st.info("Comming soon: The AI will suggest a subject line for your email.")   
+
+        st.subheader("Phishing Detection")
+        st.info("Comming soon: The AI will analyze your email for potential phishing attempts and provide a risk assessment.")
+
+        st.subheader("Summary")
+        st.info("Comming soon: The AI will provide a summary of your email content.")
