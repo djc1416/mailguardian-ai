@@ -1,5 +1,5 @@
 from modules.grammar import correct_email
-
+from modules.tone import improve_tone   
 import streamlit as st
 
 st.set_page_config(
@@ -17,6 +17,15 @@ email= st.text_area(
     height=250,
     placeholder="Paste your email here..."  
 )
+tone= st.selectbox(
+    "Select a tone",
+    [
+        "Professional",
+        "Friendly",
+        "Formal",
+        "Casual",
+    ]
+)        
 
 if st.button("Analyze Email"):
     if email.strip() == "":
@@ -30,14 +39,15 @@ if st.button("Analyze Email"):
         corrected_email = correct_email(email)
         st.code(corrected_email)
 
-        st.subheader("Tone Analysis")
-        st.info("Comming soon: The AI will analyze the tone of your email and provide feedback.")
-
+        st.subheader("Tone Improvement")
+        improved_email = improve_tone(email, tone)
+        st.code(improved_email)
+        
         st.subheader("Suggested Subject")
-        st.info("Comming soon: The AI will suggest a subject line for your email.")   
+        st.info("Coming soon: The AI will suggest a subject line for your email.")   
 
         st.subheader("Phishing Detection")
-        st.info("Comming soon: The AI will analyze your email for potential phishing attempts and provide a risk assessment.")
+        st.info("Coming soon: The AI will analyze your email for potential phishing attempts and provide a risk assessment.")
 
         st.subheader("Summary")
-        st.info("Comming soon: The AI will provide a summary of your email content.")
+        st.info("Coming soon: The AI will provide a summary of your email content.")
