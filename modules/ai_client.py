@@ -11,7 +11,7 @@ client = OpenAI(
 
 def ask_ai(prompt):
     response = client.chat.completions.create(
-        model="deepseek/deepseek-chat-v3-0324:free",
+        model="openrouter/free",
         messages=[
             {
                 "role": "system",
