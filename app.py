@@ -1,5 +1,6 @@
 from modules.grammar import correct_email
 from modules.tone import improve_tone   
+from modules.subject import generate_subject
 import streamlit as st
 
 st.set_page_config(
@@ -44,8 +45,9 @@ if st.button("Analyze Email"):
         st.code(improved_email)
         
         st.subheader("Suggested Subject")
-        st.info("Coming soon: The AI will suggest a subject line for your email.")   
-
+        generated_subject = generate_subject(email)
+        st.code(generated_subject)
+       
         st.subheader("Phishing Detection")
         st.info("Coming soon: The AI will analyze your email for potential phishing attempts and provide a risk assessment.")
 
