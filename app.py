@@ -1,6 +1,7 @@
 from modules.grammar import correct_email
 from modules.tone import improve_tone   
 from modules.subject import generate_subject
+from modules.phishing import detect_phishing
 import streamlit as st
 
 st.set_page_config(
@@ -49,7 +50,8 @@ if st.button("Analyze Email"):
         st.code(generated_subject)
        
         st.subheader("Phishing Detection")
-        st.info("Coming soon: The AI will analyze your email for potential phishing attempts and provide a risk assessment.")
+        phising_result = detect_phishing(email)
+        st.code(phising_result)
 
         st.subheader("Summary")
         st.info("Coming soon: The AI will provide a summary of your email content.")
