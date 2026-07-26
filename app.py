@@ -11,6 +11,8 @@ st.set_page_config(
 
 )   
 
+st.image("assets/logo.png", width=180)
+
 st.title("MailGuardian IA")
 
 st.write("AI-powered email assistant that helps users improve emails and detect phishing attempts.")
