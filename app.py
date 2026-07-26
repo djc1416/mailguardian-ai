@@ -34,26 +34,32 @@ if st.button("Analyze Email"):
     if email.strip() == "":
         st.warning("Please paste an email to analyze.")
     else:
-        st.success("Analyzing your email...")
+        with st.spinner("Analyzing your email..."):
+            st.header("Email Analysis Results")
 
-        st.header("Email Analysis Results")
+            st.subheader("Grammar Correction")
+            corrected_email = correct_email(email)
+            st.code(corrected_email)
 
-        st.subheader("Grammar Correction")
-        corrected_email = correct_email(email)
-        st.code(corrected_email)
-
-        st.subheader("Tone Improvement")
-        improved_email = improve_tone(email, tone)
-        st.code(improved_email)
+            st.subheader("Tone Improvement")
+            improved_email = improve_tone(email, tone)
+            st.code(improved_email)
         
-        st.subheader("Suggested Subject")
-        generated_subject = generate_subject(email)
-        st.code(generated_subject)
+            st.subheader("Suggested Subject")
+            generated_subject = generate_subject(email)
+            st.code(generated_subject)
        
-        st.subheader("Phishing Detection")
-        phising_result = detect_phishing(email)
-        st.code(phising_result)
-
-        st.subheader("Email Summary")
-        summary = summarize_email(email)
-        st.code(summary)
+            st.subheader("Phishing Detection")
+            phising_result = detect_phishing(email)
+            if "HIGH" in phising_result.upper():
+                st.error(phising_result)
+            elif "MEDIUM" in phising_result.upper():
+                st.warning(phising_result)
+            elif "LOW" in phising_result.upper():
+                st.success(phising_result)
+            else:
+                st.info(phising_result)       
+                
+            st.subheader("Email Summary")
+            summary = summarize_email(email)
+            st.code(summary)
