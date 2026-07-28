@@ -3,6 +3,7 @@ from modules.tone import improve_tone
 from modules.subject import generate_subject
 from modules.phishing import detect_phishing
 from modules.summary import summarize_email
+from utils.text_utils import clean_email, is_empty
 import streamlit as st
 
 st.set_page_config(
@@ -33,7 +34,7 @@ tone= st.selectbox(
 )        
 
 if st.button("Analyze Email"):
-    if email.strip() == "":
+    if is_empty(email):
         st.warning("Please paste an email to analyze.")
     else:
         with st.spinner("Analyzing your email..."):
