@@ -61,4 +61,38 @@ Run the application:
 streamlit run app.py
 ```
 
+## Usage
 
+1. Launch the Streamlit application.
+2. Paste an email into the text area.
+3. Click **Analyze Email**.
+4. Review the AI-generated results:
+   - Grammar Correction
+   - Tone Improvement
+   - Suggested Subject
+   - Phishing Detection
+   - Email Summary
+
+## Screenshots
+
+### Home Page
+
+![Home page](assets/home.png)
+
+### Analysis Results (Part 1)
+![Analysis Results Part 1](assets/analysis1.png)
+
+### Analysis Results (Part 2)
+![Analysis Results Part 2](assets/analysis2.png)
+
+## Architecture
+
+For more details about the project architecture, see the documentation:
+
+- [Architecture Documentation](docs/architecture.md)
+
+## Roadmap
+
+Future improvements and planned features are available here:
+
+- [Project Roadmap](docs/roadmap.md)

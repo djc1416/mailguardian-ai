@@ -7,14 +7,14 @@ from utils.text_utils import clean_email, is_empty
 import streamlit as st
 
 st.set_page_config(
-    page_title="MailGuardian IA",
+    page_title="MailGuardian AI",
     layout="centered",
 
 )   
 
 st.image("assets/logo.png", width=180)
 
-st.title("MailGuardian IA")
+st.title("MailGuardian AI")
 
 st.write("AI-powered email assistant that helps users improve emails and detect phishing attempts.")
 
